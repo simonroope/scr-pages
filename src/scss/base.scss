@@ -1,0 +1,50 @@
+@import './colors';
+
+html {
+  background: $lavender;
+}
+
+// https://colorswall.com/palette/36341/
+.home {
+  background: $lavender;
+  color: $darkSlateGrey;
+}
+
+.navbar {
+  font-size: 20px;
+  @media (max-width: 768px) { 
+    font-size: 16px;
+ }
+}
+
+body {
+  background-color: $lavender;
+  font-size: 16px;
+  color: $darkSlateGrey;
+}
+
+h1 {
+  color: $darkSlateGrey;
+}
+
+h2 {
+  color: $darkSlateGrey;
+}
+
+h3 {
+  color: $darkSlateGrey;
+}
+
+footer {
+  font-size: 0.75rem;
+  background-color: $lavender; 
+  color: $darkSlateGrey;
+  padding: 25px 15px;
+  a {
+    color: $lavender;
+    font-weight: bold;
+  }
+  p {
+    margin: 0;
+  }
+}

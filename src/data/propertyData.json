@@ -1,0 +1,33 @@
+{
+	"property": [
+                {
+			"propertyCode": "P01",
+			"propertyName": "Property 1",
+			"propertyCountry": "FR",
+			"valuation": "3000000",
+			"thumbPhoto": "Image1"
+		},
+		{
+			"propertyCode": "P02",
+			"propertyName": "Property 2",
+			"propertyCountry":"DE",
+		         "valuation":"4500000",
+		         "thumbPhoto":"Image2"
+		},
+		{
+			"propertyCode": "P03",
+			"propertyName": "Property 3",
+		         "propertyCountry":"FR",
+			"valuation": "14500000",
+			"thumbPhoto": "Image3"
+		},
+		{
+			"propertyCode": "P04",
+			"propertyName": "Property 44",
+			"propertyCountry": "GB",
+			"valuation": "1250000",
+			"thumbPhoto": "Image4"
+		}
+	]
+}
+

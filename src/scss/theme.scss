@@ -1,0 +1,197 @@
+.table {
+  border: 1px solid $white;
+  font-size: 12px;
+  line-height: 14px;
+  padding:0; 
+  .table-title {
+    padding: 1em 0.5em;
+    text-transform: uppercase;
+  }
+  thead {
+    tr {
+      background-color: $lavender !important;
+    }
+    th {
+      border: none;
+      padding: 0.5em
+    }
+  }
+  td {
+    border-top: none;
+    padding: 0.25em 0.5em;
+    height: 12px;
+  }
+}
+
+.btn-group {
+  width: 100%;
+  display: flex;
+  .btn {
+    flex: 1;
+    border: 2px solid $purple !important;
+    background-color: $purple;
+    &.active {
+      background-color: $lightPurple !important;
+    }
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+}
+
+.btn-group-deposit-withdraw {
+  width: 100%;
+  display: flex;
+  .btn {
+    flex: 1;
+    color: $grey !important;
+    background-color: $lavender;
+    border-color: $grey !important;
+    border-width: 2.5px;
+    border-radius: 0.5;
+    font-size: 12px;
+    padding: 15px; 
+    &.active {
+      color: $darkSlateGrey !important;
+      border-color: $darkSlateGrey !important;
+    }
+    &:hover:not(.active) {
+      color: $slateGrey !important;
+      border-color: $slateGrey !important;
+    }
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+}
+
+.btn-group-buy-sell {
+  width: 100%;
+  display: flex;
+  .btn {
+    flex: 1;
+    border-radius: 0;
+    border-color: $midLavender !important;
+    background-color: $midLavender !important;
+    color: $grey !important;
+    font-size: 12px;
+    font-weight: bold;
+    &.btn-buy.active {
+      background-color: $green !important;
+      border-color: $green !important;
+      color: $white !important;
+    }
+    &.btn-sell.active {
+      background-color: $orange !important;
+      border-color: $orange !important;
+      color: $white !important;
+    }
+    &:focus {
+      box-shadow: none !important;
+    }
+    &:hover:not(.active) {
+      background-color: $darkLavender !important;
+      border-color: $darkLavender;
+    }
+  }
+}
+
+.btn-group-market-limit {
+  width: 100%;
+  display: flex;
+  .btn {
+    flex: 1;
+    background-color: $lavender;
+    border-radius: 0;
+    padding: 5px; 
+    border-bottom-width: medium !important;
+    &.active {
+      color: $darkSlateGrey !important;
+      border-bottom-color: $darkSlateGrey !important;
+    }
+    &:not(.active) {
+      color: $grey !important;
+      border-bottom-color: $grey !important;
+    }
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+}
+
+.btn-wallet-submit {
+  padding: 2px 10px;
+  font-size: 85%;
+  color: $white; 
+  border: none;
+  background-color: $black;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.btn-buy-submit {
+  padding: 10px 35px;
+  font-size: 85%;
+  color: $white; 
+  border: none;
+  background-color: $green;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.btn-sell-submit {
+  padding: 10px 35px;
+  font-size: 85%;
+  color: $white;
+  border: none;
+  background-color: $orange;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.btn-success-submit {
+  padding: 10px 35px;
+  font-size: 85%;
+  color: $white; 
+  border: none;
+  background-color: $blue;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.modal-background-color{
+  background-color: $lightLavender !important;
+}
+
+.form-control {
+  background-color: $white; 
+  color: $black;
+}
+
+.input-group-append {
+  .input-group-text {
+    background-color: $lightLavender;
+    border: $darkLavender;
+    color: $darkSlateGrey;
+    font-weight: bold;
+  }
+}
+
+.small-font {
+  font-size: 12px;
+}
+
+/*
+.nav-link{
+  color: $darkSlateGrey !important;
+}
+
+.navbar-light .navbar-nav .nav-link.inactive {
+  color: #000;
+}
+
+.navbar-light .navbar-nav .nav-link.inactive:focus,
+.navbar-light .navbar-nav .nav-link.inactive:hover {
+  color: #1d8f32;
+}
+*/

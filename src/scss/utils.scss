@@ -1,0 +1,25 @@
+$fontSmall: 14px;
+
+.green-bg {
+  background: $green;
+}
+.red-bg {
+  background: $red;
+}
+.orange-bg {
+  background: $orange;
+}
+
+.yellow-bg {
+  background: $orange;
+}
+
+.flex {
+  display: flex;
+}
+
+@media (min-width: 576px) {
+  .first-col {
+    padding-right: 0;
+  }
+}

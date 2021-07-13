@@ -1,0 +1,52 @@
+@import './colors';
+
+html, body {
+  background: $lavender;
+  width: 100%;
+  height: 100%;
+}
+
+.home {
+  background: $lavender;
+  color: $darkSlateGrey;
+}
+
+.container {
+  // padding: 2px 16px;  // top & bottom, l & r
+  // padding: 2px 16px 2px, 0px;  // top, r, bottom, l 
+}
+
+.navbar {
+  font-size: 20px;
+  @media (max-width: 768px) { 
+    font-size: 16px;
+ }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 $blackShadow;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 $blackShadow;
+}
+
+.card-header {
+  font-size: 10px;
+  font-weight: bold;
+  background-color: $lightBlue !important;  //https://colorswall.com/palette/24569
+  color: $darkBlue;
+}
+
+.property {
+  font-size: 14px;
+}
+
+.investor {
+  font-size: 14px;
+}
+
+.dex {
+  background: $lavender; 
+  font-size: 14px;
+}

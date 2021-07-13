@@ -1,0 +1,17 @@
+.order-list {
+  &.order-list-buy {
+    .order-list-title {
+      background-color: $green !important;
+      color: $white !important;
+      border: none;
+    }
+  }
+  &.order-list-sell {
+    .order-list-title {
+      background-color: $orange !important;
+      color: $white !important;
+      border: none;
+    }
+  }
+  color: $black;
+}
