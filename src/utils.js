@@ -25,11 +25,16 @@ const getBlockchain = () =>
       console.log('Utils accounts: ', accounts);
 
       const provider = new ethers.providers.Web3Provider(window.ethereum);
+      console.log('provider: ', provider);
 
       const signer = provider.getSigner();
+      console.log('signer: ', signer);
+
       const signerAddress = await signer.getAddress();
+      console.log('signerAddress: ', signerAddress);
 
       const networkId = await provider.getNetwork();
+      console.log('networkId: ', networkId );
 
       resolve( {accounts, signer, signerAddress, provider, networkId} );
     }

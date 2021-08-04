@@ -10,6 +10,7 @@ import WalletConnect from './components/WalletConnect';
 const App = ({accounts, blockchain, reContracts, dexContracts}) => {
 
   console.log('App');
+  console.log(`reContracts: ${typeof reContracts}`); 
 
   return (
     
@@ -19,18 +20,17 @@ const App = ({accounts, blockchain, reContracts, dexContracts}) => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path='/realestate' 
-                     component={ (typeof reContracts !== 'undefined') ? () => <RealEstate blockchain={blockchain} accounts={accounts} contracts={reContracts}/> 
-                                 : () => <WalletConnect /> } />
-        
+                     component={ (typeof reContracts === 'undefined') ? () => <WalletConnect /> 
+                                                           : () => <RealEstate blockchain={blockchain} accounts={accounts} contracts={reContracts} /> } /> 
         <Route exact path='/dex' 
-                     component={ (typeof dexContracts !== 'undefined') ? () => <Dex blockchain={blockchain} accounts={accounts} contracts={dexContracts}/> 
-                                 : () => <WalletConnect /> } />
+                     component={ (typeof dexContracts === 'undefined') ? () => <WalletConnect />  
+                                                           : () => <Dex blockchain={blockchain} accounts={accounts} contracts={dexContracts} /> } /> 
       </Switch>
       <Footer/> 
     </div>
     </BrowserRouter>
   
-);
+  );
 }
 
 export default App;

@@ -9,19 +9,43 @@ const Nvbar = () => {
   const loadEthers = async () => {
 
     if (window.ethereum) {
+     
+      console.log('window.ethereum: ', window.ethereum );
 
-      await window.ethereum.request({ method: 'eth_requestAccounts' });
+      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+      console.log('accounts: ', accounts);
 
       const provider = new ethers.providers.Web3Provider(window.ethereum);
+      console.log('provider: ', provider);
 
       const signer = provider.getSigner();
+      console.log('signer: ', signer);
+
+      const signerAddress = await signer.getAddress();
+      console.log('signerAddress: ', signerAddress);
 
       const networkId = await provider.getNetwork();
       const nwork = networkId.name;
+      console.log('networkId: ', networkId);
+      console.log('networkName: ', nwork);
 
       const chainId = await window.ethereum.request({ method: 'eth_chainId' });
+      console.log('chainId: ', chainId);
 
     }
+
+    if (!window.ethereum) {
+      window.alert('Connect to Wallet');
+    }
+  }
+
+
+  const isLoadEthers = async () => {
+    
+    if (!window.ethereum) {
+      console.log('Connect to Wallet'); 
+    }
+    
   }
 
   return (
@@ -37,7 +61,7 @@ const Nvbar = () => {
           <Nav.Link className="mx-2" eventKey={3} as={NavLink} to="/dex"><h4>DEX</h4></Nav.Link>
         </Nav>
         <Nav>
-          <Nav.Link><img src={wallet} width={180} alt="Wallet"/></Nav.Link>
+          <Nav.Link onClick={loadEthers}><img src={wallet} width={180} alt="Wallet"/></Nav.Link>
         </Nav>
       </Navbar.Collapse>
       </Navbar>

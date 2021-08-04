@@ -11,22 +11,26 @@ const InvestInFund = ({ investInFund, userInvestor, funds }) => {
   const { register } = useForm();
 
   useEffect(() => {
+
     register('investorName', { required: true });
     register('investorCountry', { required: true });
     register('numberShares', { required: true });
     register('total');
+
   }, []);
 
   const initialState = {
+
     investorName: typeof userInvestor !== 'undefined' ? userInvestor.investorName : '',
     investorCountry: typeof userInvestor !== 'undefined' ? userInvestor.investorCountry : '',
     numberShares: '',
     daiTotal: '0',
     daiPrice: funds[0].sharePrice 
+
   };
 
   const [state, setState] = useState(initialState);
-    
+
   const handleInputChange = (e) => {
     setState((prevProps) => ({
       ...prevProps,
@@ -35,15 +39,22 @@ const InvestInFund = ({ investInFund, userInvestor, funds }) => {
   };
 
   const handleSubmit = (event) => {
+
     event.preventDefault();
 
-    try {
-      investInFund( 0, state.investorName, state.investorCountry, 
-                       state.numberShares, total ); 
+    if ( userInvestor.daiBalance >= total ) {
+
+      try {
+        investInFund( 0, state.investorName, state.investorCountry, 
+                         state.numberShares, total ); 
+      }
+      catch (err) {
+        console.error(err)
+      }
     }
-    catch (err) {
-      console.error(err)
-    }
+    else {
+      alert (`Insufficient Dai Balance: ${(userInvestor.daiBalance / 100).toFixed(2)}`);
+    } 
 
     closeModal();
   };

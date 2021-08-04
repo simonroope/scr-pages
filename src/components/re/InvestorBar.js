@@ -3,29 +3,29 @@ import { Bar }  from 'react-chartjs-2';
 
  const InvestorBar = ({investors}) => { 
   
-  let labels = [];
-  let dataset = [];
+  let iNames = [];
+  let iBalances = [];
 
   for (let i=0;i<investors.length;i++) {
-    labels.push(investors[i].investorName); 
-    dataset.push(investors[i].shareBalance);
+    iNames.push(investors[i].investorName); 
+    iBalances.push(investors[i].shareBalance);
   }
 
   let state = {
-    labels: labels,
+    labels: iNames,
     datasets: [
       {
-        label: 'Share Balance',
+        label: 'Share Balances', // '', // iNames,
+        data: iBalances,
         backgroundColor: ['#ec3414','#fca494','#063950','#5a93ad','#9fb7c3','#61393b'],
         borderWidth: 1,
         hoverBackgroundColor: ['#ec3414','#fca494','#063950','#5a93ad','#9fb7c3','#61393b'],
-        hoverBorderColor: 'rgba(255,99,132,1)',
-        data: dataset
+        hoverBorderColor: 'rgba(255,99,132,1)'
       }
     ]
   };
   
-   return (
+  return (
          <Bar
           data={state}
           options={{

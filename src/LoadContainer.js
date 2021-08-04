@@ -13,33 +13,13 @@ function LoadContainer() {
 
     const init = async () => {
 
-      console.log('LoadContainer.init');
-
-      let blockchain, accounts, reContracts, dexContracts;
-
-      try {
-        console.log('LoadContainer.getBlockchain');
-        blockchain = await getBlockchain();
-        accounts = blockchain.accounts;
-        console.log('LoadContainer.blockchain.networkId: ', blockchain.networkId.chainId);
-      }
-      catch {
-      }
-
-      try {
-        reContracts = await getReContracts(blockchain);
-      }
-      catch {
-      }
-
-      try {
-        dexContracts = await getDexContracts(blockchain);
-      }
-      catch {
-      }
+      const blockchain = await getBlockchain();
+      const accounts = blockchain.accounts;
+        
+      const reContracts = await getReContracts(blockchain);
+      
+      const dexContracts = await getDexContracts(blockchain);
  
-      console.log('LoadContainer.set');
-
       setBlockchain(blockchain);
       setAccounts(accounts);
       setReContracts(reContracts);
@@ -48,16 +28,6 @@ function LoadContainer() {
     }
     init();
   }, []);
-
-  const isReady = () => {
-
-    return (
-      typeof blockchain !== 'undefined' 
-      && typeof reContracts !== 'undefined'
-      && typeof dexContracts !== 'undefined'
-      && accounts.length > 0
-    );
-  }
 
   return (
     <App

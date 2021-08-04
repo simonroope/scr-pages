@@ -1,5 +1,5 @@
 import React from 'react';
-import { Doughnut} from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 
  const InvestorPie = ({investors}) => { 
 
@@ -17,27 +17,35 @@ import { Doughnut} from 'react-chartjs-2';
    labels.push('Fund');
    dataset.push(funddata);
    
-   let state = {
+   const state = {
       labels: labels, 
       datasets: [
          {
-            label: '{shareBalance}',
-            backgroundColor: ['#ec3414','#fca494','#063950','#5a93ad','#9fb7c3','#61393b'],
-            borderColor: 'white',
-            borderWidth: 1,
-            cutoutPercentage: 10,
-            hoverBackgroundColor: ['#ec3414','#fca494','#063950','#5a93ad','#9fb7c3','#61393b'],
-            hoverBorderColor: 'rgba(255,99,132,1)',
-            data: dataset
-         }
-      ]
+           label: '{shareBalance}',
+           backgroundColor: ['#ec3414','#fca494','#063950','#5a93ad','#9fb7c3','#61393b'],
+           borderColor: 'white',
+           borderWidth: 1,
+           cutout: 50,
+           hoverBackgroundColor: ['#ec3414','#fca494','#063950','#5a93ad','#9fb7c3','#61393b'],
+           hoverBorderColor: 'rgba(255,99,132,1)',
+           data: dataset
+         }]
    };
+
+  const options = {
+     legend: [{
+               display: true,
+               position: 'bottom',
+               labels: {
+                 fontColor: 'rgb(255, 99, 132)'
+               }
+             }]
+  };
 
    return (
      <div className='text-center'>Fund Ownership
          <Doughnut data={state}
-                   options={{ legend: { display: false },
-                              cutoutPercentage: 35}} />
+                   options={options} />
       </div>
    );
  }
