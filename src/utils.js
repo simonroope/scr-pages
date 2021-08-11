@@ -15,10 +15,13 @@ const getBlockchain = () =>
 
   new Promise( async (resolve, reject) => {
 
-    console.log('Utils.getBlockchain');
-    console.log('Utils window.ethereum: ', window.ethereum);
+    if (typeof window.ethereum === 'undefined') {
+      console.log('window.ethereum undefined');
+    }
 
     if (window.ethereum) {
+
+      console.log('If window.ethereum 2: ', window.ethereum);
 
       const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
 

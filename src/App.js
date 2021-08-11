@@ -9,25 +9,18 @@ import WalletConnect from './components/WalletConnect';
 
 const App = ({accounts, blockchain, reContracts, dexContracts}) => {
 
-  console.log('App');
-  console.log(`reContracts: ${typeof reContracts}`); 
-
   return (
     
     <BrowserRouter>
-    <div className="home">
-      <Nvbar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path='/realestate' 
-                     component={ (typeof reContracts === 'undefined') ? () => <WalletConnect /> 
-                                                           : () => <RealEstate blockchain={blockchain} accounts={accounts} contracts={reContracts} /> } /> 
-        <Route exact path='/dex' 
-                     component={ (typeof dexContracts === 'undefined') ? () => <WalletConnect />  
-                                                           : () => <Dex blockchain={blockchain} accounts={accounts} contracts={dexContracts} /> } /> 
-      </Switch>
-      <Footer/> 
-    </div>
+      <div className="home">
+        <Nvbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path='/realestate' component={() => <RealEstate blockchain={blockchain} accounts={accounts} contracts={reContracts}/> } />
+          <Route exact path='/dex' component={() => <Dex blockchain={blockchain} accounts={accounts} contracts={dexContracts}/> } />
+        </Switch>
+        <Footer/> 
+      </div>
     </BrowserRouter>
   
   );

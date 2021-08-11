@@ -42,7 +42,7 @@ const InvestInFund = ({ investInFund, userInvestor, funds }) => {
 
     event.preventDefault();
 
-    if ( userInvestor.daiBalance >= total ) {
+    if ( userInvestor.daiBalance !== 'undefined' && userInvestor.daiBalance >= total ) {
 
       try {
         investInFund( 0, state.investorName, state.investorCountry, 

@@ -95,21 +95,19 @@ const RealEstate = ({blockchain, accounts, contracts}) => {
 
   }
 
-  useEffect(() => {
+  const getUserInvestor = async () => {
 
-    const getUserInvestor = async () => {
+    const allInvestorDetails = await getInvestorBalances();
+    const userInvestorDetails = allInvestorDetails.find(i => i.investor.toLowerCase() === accounts[0].toLowerCase());
 
-      const allInvestorDetails = await getInvestorBalances();
-      const userInvestorDetails = allInvestorDetails.find(i => i.investor.toLowerCase() === accounts[0].toLowerCase());
-
-      return userInvestorDetails;
+    return userInvestorDetails;
   
-    }
+  }
+
+  useEffect(() => {
 
     const init = async () => {
 
-      console.log('RealEstate');
- 
       const userInvestor = await getUserInvestor();
       const funds = await getFundBalances();
       const investors = await getInvestorBalances();

@@ -1,15 +1,13 @@
 import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 
-import scrimage from '../images/SCRoope.jpg';
+import scrimage from '../images/sRoope.jpg';
 import linkedinlogo from '../images/linkedin.png';
 import gitlogo from '../images/github.png';
 import twitterlogo from '../images/twitter.png';
-import scrcv from '../images/sroopeCV.pdf';
+import scrcv from '../images/sRoopeCV.pdf';
 
 const Home = () => { 
-
-  console.log('Home');
 
   return (
     

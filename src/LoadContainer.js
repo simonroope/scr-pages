@@ -29,6 +29,19 @@ function LoadContainer() {
     init();
   }, []);
 
+  const isReady = () => {
+    return (
+      typeof blockchain !== 'undefined' 
+      && typeof reContracts !== 'undefined'
+      && typeof dexContracts !== 'undefined'
+      && accounts.length > 0
+    );
+  }
+
+  if (!isReady()) {
+    return <div>Connect Wallet</div>;
+  }
+
   return (
     <App
       blockchain={blockchain}

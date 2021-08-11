@@ -205,8 +205,6 @@ const Dex = ({blockchain, accounts, contracts}) => {
 
     const init = async () => {
 
-      console.log('Dex');
-
       const rawTokens = await contracts.dex.getTokens(); 
 
       const tokens = rawTokens.map(token => ({
@@ -231,10 +229,11 @@ const Dex = ({blockchain, accounts, contracts}) => {
     init();
   }, []);
 
+
   useEffect(() => {
 
     const init = async () => {
-
+    
       const [balances, orders] = await Promise.all([
         getBalances(
           user.accounts[0], 
