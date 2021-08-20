@@ -1,7 +1,7 @@
 Deployed to Rinkeby testnet.
 
-RealEstate : 
-Dex : 
+RealEstate : 0xCfC5c1b202D6c66313F14C6aD8eea99CFFA5D713
+Dex : 0x6021A1cD5d37cBcaB8DBF8649ecB15C55EefF975
 
 # Getting Started with Create React App
 
